@@ -6,8 +6,8 @@ using namespace std;
 
 int main() {
 
-  vector<vector<long double>> A = {{20,7,9},{7,30,8},{9,8,30}};
-  vector<long double> b = {16,38,38};
+  vector<vector<long double>> A = {{10,1,1},{1,10,1},{1,1,10}};
+  vector<long double> b = {12,12,12};
   vector<long double> x;
 
   try {

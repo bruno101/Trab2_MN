@@ -30,23 +30,18 @@ long double gaussJordan::calculaDeterminante(int n, vector<vector<long double>> 
   long double pivot;
 
   for (int k = 0; k <= n-1; k++) {
-
+    if (C[k][k] == 0) {
+      throw "C[k][k] igual a 0."s;
+    }
     for (int i = 0; i <= n-1; i++) {
-
       if (i != k) {
         for (int j = k+1; j <= n-1; j++) {   
-          if (C[k][k] == 0) {
-            throw "C[k][k] igual a 0."s;
-          }
           C[i][j] -= C[i][k]*C[k][j]/C[k][k];
         }
         C[i][k] = 0;
       }
-
     }
-
     det *= C[k][k];
-
   }
 
   return det;
